@@ -2,7 +2,9 @@ import { Component, Fragment } from 'react';
 import video from './assets/chef-video.mp4';
 import Recipes from './Recipes.js';
 import axios from 'axios';
-// import TextTransform from './TextTransform.js';
+import TextTransform from './TextTransform.js';
+
+
 
 class App extends Component {
 
@@ -15,32 +17,42 @@ class App extends Component {
     }
   }
 
+  
   componentDidMount() {
+    TextTransform();
+  }
+
+  TextTransform = () => {
     // create a fade in effect for the title
-    // const text = document.querySelector("h1");
-    // const strText = text.textContent;
-    // const splitText = strText.split("");
-    // text.textContent = "";
+    const text = document.querySelector("h1");
+    const strText = text.textContent;
+    const splitText = strText.split("");
+    text.textContent = "";
 
-    // for (let i = 0; i < splitText.length; i++) {
-    //   text.innerHTML += "<span>" + splitText[i] + "</span>";
-    // }
+    for (let i = 0; i < splitText.length; i++) {
+      text.innerHTML += "<span>" + splitText[i] + "</span>";
+    }
 
-    // onTick = () => {
-    //   const span = text.querySelectorAll("span")[char];
-    //   span.classList.add("fade");
-    //   char++
-    //   if (char === splitText.length) {
-    //     complete();
-    //     return;
-    //   }
-    // }
+    let char = 0;
 
-    // complete = () => {
-    //   clearInterval(timer)
-    //   timer = null;
-    // }
-    // <TextTransform />
+    let timer = setInterval(function () {
+      const span = text.querySelectorAll("span")[char];
+      span.classList.add("fade");
+      char++;
+      // this.setState({
+      //   char: char + 1
+      // })
+      console.log('test');
+      if (char === splitText.length) {
+        complete();
+        return;
+      }
+    }, 200);
+
+    const complete = () => {
+      clearInterval(timer);
+      timer = null;
+    }
   }
 
   handleInputChange = (e) => {
@@ -94,7 +106,7 @@ class App extends Component {
           </div>
         </header>
 
-        <section>
+        <section className="results">
           <ul className="recipe-list">
           {
             this.state.recipes.map((meal, index) => {

@@ -6,8 +6,10 @@ class Recipe extends Component {
     const { recipeName, calories, image } = this.props;
     return (
       <li className="recipe">
-        <h2>{recipeName}</h2>
-        <p>{calories.toFixed(0)}</p>
+        <div className="info">
+          <h2>{recipeName}</h2>
+          <p>{calories.toFixed(0)}</p>
+        </div>
         <img src={image} alt={recipeName} />
       </li>
     )

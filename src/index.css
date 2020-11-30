@@ -38,17 +38,50 @@ header {
   flex-direction: column;
 }
 
+h1, h2, p {
+  padding: 20px;
+}
+
 h1 {
-  padding-bottom: 30px;
+  margin: 0;
   color: white;
   position: absolute;
-  top: 15%;
+  top: 50%;
   left: 50%;
-  transform: translateX(-50%);
+  transform: translate(-50%, -50%);
   z-index: 5;
   font-size: 8rem;
   font-family: 'Dancing Script', cursive;
   font-weight: 700;
+  animation: move 5s 5s ease-in-out forwards;
+}
+
+h2 {
+  font-size: 3rem;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+p {
+  text-align: left;
+}
+
+span {
+  opacity: 0;
+  transition: all .4s ease;
+}
+
+span.fade {
+  opacity: 1;
+}
+
+@keyframes move {
+  0% {
+    top: 50%;
+  }
+  100% {
+    top: 25%;
+  }
 }
 
 .banner {
@@ -149,4 +182,37 @@ video {
   position: relative;
   z-index: 10;
   transition: 1s;
+}
+
+ul {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  padding: 50px;
+}
+
+li {
+  width: calc((100% - 3%) / 2);
+  margin-right: 3%;
+  padding: 20px;
+  display: flex;
+}
+
+
+li:nth-child(even) {
+  margin-right: 0;
+}
+
+li img {
+  width: 40%;
+  padding: 20px;
+  border-radius: 50%;
+}
+
+.info {
+  width: 60%;
+  display: flex;
+  /* justify-content: center; */
+  /* align-items: center; */
+  flex-direction: column;
 }
