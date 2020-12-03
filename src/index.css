@@ -19,6 +19,8 @@ html {
 }
 
 body {
+  font-family: "Noto Sans", sans-serif;
+  font-weight: 400;
   font-size: 16px;
   color: #333;
   overflow-x: hidden;
@@ -125,6 +127,19 @@ video {
   transition: 1s;
   z-index: 5;
   opacity: .2;
+  animation: fadeIn 12s ease-in-out;
+}
+
+@keyframes fadeIn{
+  0% {
+    opacity: 0;
+  }
+  60% {
+    opacity: 0;
+  }
+  100% {
+    opacity: .2;
+  }
 }
 
 .search-box:hover,
@@ -184,6 +199,14 @@ video {
   transition: 1s;
 }
 
+.results {
+  display: none;
+}
+
+.show {
+  display: initial;
+}
+
 ul {
   display: flex;
   flex-wrap: wrap;
@@ -195,24 +218,79 @@ li {
   width: calc((100% - 3%) / 2);
   margin-right: 3%;
   padding: 20px;
-  display: flex;
 }
-
 
 li:nth-child(even) {
   margin-right: 0;
 }
 
+.core-content {
+  display: flex;
+  justify-content: space-evenly;
+}
+
 li img {
   width: 40%;
-  padding: 20px;
+  margin: 20px;
   border-radius: 50%;
+  border: 10px solid #333;
 }
 
 .info {
-  width: 60%;
+  width: 30%;
   display: flex;
-  /* justify-content: center; */
+  justify-content: center;
   /* align-items: center; */
   flex-direction: column;
+  padding-top: 10px;
+}
+
+.info p {
+  font-size: 2rem;
+}
+
+.re-direct {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px 0;
+}
+
+a {
+  text-decoration: none;
+  background-color: #333;
+  padding: 15px 10px;
+  border-radius: 15px;
+  color: #fff;
+}
+
+.link-to-top {
+  margin-bottom: 20px;
+}
+
+
+/* Footer styling starts here */
+footer {
+  display: none;
+  color: #fff;
+  font-size: 2rem;
+}
+
+.background {
+  background-color: #333;
+}
+
+footer p {
+  text-align: center;
+}
+
+footer a {
+  text-decoration: none;
+  color: #fff;
+  transition: .5s;
+}
+
+footer a:hover,
+footer a:focus {
+  color: #ec524b;
 }

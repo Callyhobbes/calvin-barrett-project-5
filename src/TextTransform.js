@@ -1,6 +1,6 @@
-import React from 'react';
 
-function TextTransform() {
+
+function textTransform() {
   
   const text = document.querySelector("h1");
   const strText = text.textContent;
@@ -17,10 +17,6 @@ function TextTransform() {
     const span = text.querySelectorAll("span")[char];
     span.classList.add("fade");
     char++;
-    // this.setState({
-    //   char: char + 1
-    // })
-    console.log('test');
     if (char === splitText.length) {
       complete();
       return;
@@ -31,12 +27,8 @@ function TextTransform() {
     clearInterval(timer);
     timer = null;
   }
-
-  return (
-    TextTransform
-  )
 }
 
-export default TextTransform;
+export default textTransform;
 
 
