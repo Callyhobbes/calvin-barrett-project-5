@@ -21,7 +21,7 @@ function textTransform() {
       complete();
       return;
     }
-  }, 200);
+  }, 150);
 
   const complete = () => {
     clearInterval(timer);

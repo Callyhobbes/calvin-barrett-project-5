@@ -119,27 +119,30 @@ class App extends Component {
         </header>
 
         <section className="results" id="results">
-          <ul className="recipe-list">
-          {
-            this.state.recipes.map((meal, index) => {
-              return(
-                <Recipes
-                  key={index}
-                  recipeName={meal.recipe.label}
-                  calories={meal.recipe.calories}
-                  image={meal.recipe.image}
-                  carbs={meal.recipe.totalNutrients.CHOCDF.quantity}
-                  protein={meal.recipe.totalNutrients.PROCNT.quantity}
-                  fat={meal.recipe.totalNutrients.FAT.quantity}
-                  ingredients={meal.recipe.ingredientsLines}
-                  url={meal.recipe.url}
-                  amount={meal.recipe.yield}
-                />
-              )
-            })
-          }
-          </ul>
-          <a href="#start" className="link-to-top" onClick={this.returnTop}>Another Recipe</a>
+          <div className="wrapper">
+            <ul className="recipe-list">
+            {
+              this.state.recipes.map((meal, index) => {
+                return(
+                  <Recipes
+                    key={index}
+                    recipeName={meal.recipe.label}
+                    calories={meal.recipe.calories}
+                    image={meal.recipe.image}
+                    carbs={meal.recipe.totalNutrients.CHOCDF.quantity}
+                    protein={meal.recipe.totalNutrients.PROCNT.quantity}
+                    fat={meal.recipe.totalNutrients.FAT.quantity}
+                    url={meal.recipe.url}
+                    amount={meal.recipe.yield}
+                  />
+                )
+              })
+            }
+            </ul>
+            <div className="to-top">
+              <a href="#start" className="link-to-top" onClick={this.returnTop}>Another Recipe</a>
+            </div>
+          </div>
         </section>
 
         <footer>

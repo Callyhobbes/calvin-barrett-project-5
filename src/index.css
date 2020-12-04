@@ -40,32 +40,80 @@ header {
   flex-direction: column;
 }
 
-h1, h2, p {
-  padding: 20px;
+.wrapper {
+  max-width: 1400px;
+  width: 100%;
+  margin: 0 auto;
 }
 
 h1 {
   margin: 0;
+  padding-left: 10px;
   color: white;
   position: absolute;
   top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translateY(-50%);
   z-index: 5;
   font-size: 8rem;
   font-family: 'Dancing Script', cursive;
   font-weight: 700;
-  animation: move 5s 5s ease-in-out forwards;
+  animation: move 5s 4s ease-in-out forwards;
+}
+
+h2, p {
+  padding: 20px;
 }
 
 h2 {
   font-size: 3rem;
   text-align: center;
   text-transform: uppercase;
+  position: relative;
+  transition: .5s;
+}
+
+h2::before {
+  content: '';
+  width: 50px;
+  height: 5px;
+  position: absolute;
+  top: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #ec524b;
+  transition: .5s;
+}
+
+h2::after {
+  content: '';
+  width: 0px;
+  height: 5px;
+  position: relative;
+  display: block;
+  top: 3px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #ec524b;
+  transition: .5s;
+}
+
+.recipe:hover h2::after,
+.recipe:focus h2::after {
+  width: 100px;
+}
+
+.recipe:hover h2::before,
+.recipe:focus h2::before {
+  width: 0;
 }
 
 p {
   text-align: left;
+  padding-right: 0;
+}
+
+a {
+  text-decoration: none;
 }
 
 span {
@@ -127,7 +175,7 @@ video {
   transition: 1s;
   z-index: 5;
   opacity: .2;
-  animation: fadeIn 12s ease-in-out;
+  animation: fadeIn 10s ease-in-out;
 }
 
 @keyframes fadeIn{
@@ -189,7 +237,7 @@ video {
   float: left;
   padding-left: 20px;
   color: white;
-  font-family: sans-serif;
+  font-family: "Noto Sans", sans-serif;
   line-height: 80px;
   width: 400px;
   transition: 1s;
@@ -201,6 +249,7 @@ video {
 
 .results {
   display: none;
+  padding: 40px 0;
 }
 
 .show {
@@ -211,13 +260,13 @@ ul {
   display: flex;
   flex-wrap: wrap;
   list-style: none;
-  padding: 50px;
+  padding: 50px 0;
 }
 
 li {
   width: calc((100% - 3%) / 2);
   margin-right: 3%;
-  padding: 20px;
+  padding: 20px 0;
 }
 
 li:nth-child(even) {
@@ -232,15 +281,20 @@ li:nth-child(even) {
 li img {
   width: 40%;
   margin: 20px;
-  border-radius: 50%;
+  border-radius: 20px 0 20px 0;
   border: 10px solid #333;
+  transition: .5s;
+}
+
+.recipe:hover img {
+  border: 10px solid #ec524b;
+  border-radius: 0 20px 0 20px;
 }
 
 .info {
   width: 30%;
   display: flex;
   justify-content: center;
-  /* align-items: center; */
   flex-direction: column;
   padding-top: 10px;
 }
@@ -254,20 +308,87 @@ li img {
   justify-content: center;
   align-items: center;
   padding: 30px 0;
+  position: relative;
 }
 
-a {
-  text-decoration: none;
+.to-top {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 30px;
+}
+
+.re-direct a {
+  font-size: 2rem;
   background-color: #333;
-  padding: 15px 10px;
+  border: 3px solid #333;
+  padding: 20px 15px;
   border-radius: 15px;
   color: #fff;
+  transition: .5s;
+  position: relative;
 }
 
-.link-to-top {
-  margin-bottom: 20px;
+.recipe:hover a,
+.recipe:focus a {
+  background-color: transparent;
+  border-radius: 20px 0 20px 0;
+  border: 3px solid #ec524b;
+  color: #ec524b;
 }
 
+.re-direct a::before {
+  content: '';
+  background-color: #ec524b;
+  width: 0;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 15px 0 15px 0;
+  transition: .5s;
+  z-index: -1;
+  overflow: hidden;
+}
+
+.re-direct a:hover::before {
+  width: 100%;
+}
+
+.re-direct a:hover {
+  color: white;
+}
+
+.to-top a {
+  font-family: 'Dancing Script', cursive;
+  font-weight: 700;
+  padding: 12px 18px;
+  font-size: 7rem;
+  color: #333;
+  position: relative;
+  transition: .5s;
+}
+
+.to-top a:hover {
+  color: white;
+}
+
+.to-top a::before {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 0%;
+  background: url(./assets/tomato-splash.png);
+  background-size: cover;
+  transform-origin: left;
+  transition: .5s;
+}
+
+.to-top a:hover::before {
+  width: 100%
+}
 
 /* Footer styling starts here */
 footer {
@@ -285,7 +406,6 @@ footer p {
 }
 
 footer a {
-  text-decoration: none;
   color: #fff;
   transition: .5s;
 }
@@ -293,4 +413,91 @@ footer a {
 footer a:hover,
 footer a:focus {
   color: #ec524b;
+}
+
+/* Media Queries */
+
+@media (max-width: 1400px) {
+  .core-content {
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+
+  li img,
+  .info {
+    width: 60%;
+  }
+}
+
+@media (max-width: 800px) {
+  li {
+    width: 90%;
+    margin: 0 auto;
+    padding: 20px 0;
+  }
+
+  li:nth-child(even) {
+    margin-right: auto;
+  }
+}
+
+@media (max-width: 600px) {
+  h1 {
+    font-size: 6rem;
+    padding-left: 20px;
+  }
+
+  .search-box {
+    height: 60px;
+    border-radius: 60px;
+    padding: 10px;
+    width: 400px;
+  }
+
+  .search-button {
+    width: 60px;
+    height: 60px;
+  }
+
+  .search-button i {
+    font-size: 2.5rem;
+    color: white;
+  }
+
+  .search-text {
+    padding-left: 20px;
+    line-height: 60px;
+    width: 300px;
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 500px) {
+  .to-top a {
+    font-size: 5rem;
+  }
+
+  .to-top a {
+    padding: 10px 20px;
+  }
+}
+
+@media (max-width: 450px) {
+  h1 {
+    font-size: 4rem;
+    padding-left: 35px;
+  }
+
+  .search-box {
+    height: 60px;
+    border-radius: 60px;
+    padding: 10px;
+    width: 300px;
+  }
+  .search-text {
+    padding-left: 20px;
+    line-height: 60px;
+    width: 200px;
+    font-size: 2.5rem;
+  }
 }
