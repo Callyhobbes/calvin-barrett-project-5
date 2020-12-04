@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/calvin-barrett-project-5/static/css/main.8ce3ba6e.chunk.css",
+    "main.js": "/calvin-barrett-project-5/static/js/main.09f24d85.chunk.js",
+    "main.js.map": "/calvin-barrett-project-5/static/js/main.09f24d85.chunk.js.map",
+    "runtime-main.js": "/calvin-barrett-project-5/static/js/runtime-main.12411c21.js",
+    "runtime-main.js.map": "/calvin-barrett-project-5/static/js/runtime-main.12411c21.js.map",
+    "static/js/2.52f8dfd1.chunk.js": "/calvin-barrett-project-5/static/js/2.52f8dfd1.chunk.js",
+    "static/js/2.52f8dfd1.chunk.js.map": "/calvin-barrett-project-5/static/js/2.52f8dfd1.chunk.js.map",
+    "static/js/3.07be14a4.chunk.js": "/calvin-barrett-project-5/static/js/3.07be14a4.chunk.js",
+    "static/js/3.07be14a4.chunk.js.map": "/calvin-barrett-project-5/static/js/3.07be14a4.chunk.js.map",
+    "index.html": "/calvin-barrett-project-5/index.html",
+    "static/css/main.8ce3ba6e.chunk.css.map": "/calvin-barrett-project-5/static/css/main.8ce3ba6e.chunk.css.map",
+    "static/js/2.52f8dfd1.chunk.js.LICENSE.txt": "/calvin-barrett-project-5/static/js/2.52f8dfd1.chunk.js.LICENSE.txt",
+    "static/media/chef-video.0df42e0c.mp4": "/calvin-barrett-project-5/static/media/chef-video.0df42e0c.mp4"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.12411c21.js",
+    "static/js/2.52f8dfd1.chunk.js",
+    "static/css/main.8ce3ba6e.chunk.css",
+    "static/js/main.09f24d85.chunk.js"
+  ]
+}
