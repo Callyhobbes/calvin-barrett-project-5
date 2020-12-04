@@ -49,9 +49,7 @@ class App extends Component {
         app_key: `${appApiKey}`
       }
     }).then((food) => {
-      // set the this.state to the queried items
-      console.log(food.data);
-      
+      // set the this.state to the queried items      
       this.setState({
         recipes: food.data.hits
       })
