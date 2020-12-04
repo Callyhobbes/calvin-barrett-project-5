@@ -147,7 +147,7 @@ class App extends Component {
 
         <footer>
           <div className="background">
-            <p>Deliciously Cooked by <a href="https://github.com/Callyhobbes" target="_blank">Cally</a> at <a href="https://junocollege.com/" target="_blank">Juno College</a> <i className="fab fa-canadian-maple-leaf"></i></p>
+            <p>Deliciously Cooked by <a href="https://github.com/Callyhobbes" target="_blank" rel="noreferrer">Cally</a> at <a href="https://junocollege.com/" target="_blank" rel="noreferrer">Juno College</a> <i className="fab fa-canadian-maple-leaf"></i></p>
           </div>
         </footer>
       </Fragment>

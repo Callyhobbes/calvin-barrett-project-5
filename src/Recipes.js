@@ -19,7 +19,7 @@ class Recipe extends Component {
           <img src={image} alt={recipeName} />
         </div>
         <div className="re-direct">
-          <a href={url} target="_blank">Instructions</a>
+          <a href={url} target="_blank" rel="noreferrer">Instructions</a>
         </div>
       </li>
     )
